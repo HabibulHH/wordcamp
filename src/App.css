@@ -35,3 +35,6 @@
   cursor: pointer;
   color: gray;
 }
+.Select-menu-outer {
+  z-index: 100 !important;
+}
