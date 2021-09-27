@@ -38,10 +38,3 @@ npm run deploy
 npm run test
 npm test -- --coverage
 ```
-
-## Starting the server in prod mode
-
-```sh
-cd notification-service
-**Additional information requires for docker!**
-```
