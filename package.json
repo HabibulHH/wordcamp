@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://habibulhh.github.io/wordcamp/",
   "scripts": {
     "start": "webpack-dev-server --hot --open",
     "build": "webpack --config webpack.config.js --mode production",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +27,7 @@
     "chroma": "0.0.1",
     "css-loader": "^4.2.0",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.2.3",
     "google-map-react": "^2.1.10",
     "html-webpack-plugin": "^4.3.0",
     "moment": "^2.29.1",
