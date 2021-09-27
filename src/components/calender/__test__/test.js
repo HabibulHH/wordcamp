@@ -1,10 +1,45 @@
+import { screen } from "@testing-library/dom";
+import { cleanup, render } from "@testing-library/react";
+import axios from "axios";
+import React from "react";
+import { unmountComponentAtNode } from "react-dom";
+import Calender from "../";
 
-import React  from "react";
-import ReactDom from "react-dom";
-import Calender  from "../index";
+let container = null;
+beforeEach(() => {
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
 
-it('Calender renders without crashing..',()=>{
- const div = document.createElement("div");
- ReactDom.render(<Calender></Calender>,div);
- ReactDom.unmountComponentAtNode(div);
-})
+afterEach(() => {
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+jest.mock("axios");
+
+afterEach(cleanup);
+
+it("renders calender correctly", async () => {
+  const fakeEvents = [
+    {
+      title: "Mock title",
+      start: "1624492800",
+      end: "1624665600",
+      id: "34343444",
+      location: "USA",
+      url: "https:demo/link#3w4/s",
+    },
+  ];
+  axios.get.mockResolvedValue({
+    data: fakeEvents,
+    headers: { "x-wp-totalpages": 11 },
+  });
+  const setState = jest.fn();
+  const useStateSpy = jest.spyOn(React, "useState");
+  useStateSpy.mockImplementation((init) => [init, setState]);
+  const { getByTestId, asFragment } = render(<Calender />);
+  expect(asFragment()).toMatchSnapshot();
+  expect(screen.getByTestId("spinner"));
+});
