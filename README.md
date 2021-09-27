@@ -22,6 +22,7 @@ This notificaiton system powered by
 ## Installation
 
 - Download the project from github repo link
+- Checkout to main branch
 - run npm install command
 - Visit web on localhost 8080
 
