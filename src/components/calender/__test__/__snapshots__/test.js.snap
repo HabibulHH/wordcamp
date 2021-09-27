@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Calender correctly 1`] = `
+exports[`renders calender correctly 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -558,7 +558,7 @@ exports[`renders Calender correctly 1`] = `
                 class="rbc-day-bg"
               />
               <div
-                class="rbc-day-bg rbc-today"
+                class="rbc-day-bg"
               />
             </div>
             <div
@@ -635,7 +635,7 @@ exports[`renders Calender correctly 1`] = `
                   </a>
                 </div>
                 <div
-                  class="rbc-date-cell rbc-now rbc-current"
+                  class="rbc-date-cell"
                   role="cell"
                 >
                   <a
@@ -662,7 +662,7 @@ exports[`renders Calender correctly 1`] = `
                 class="rbc-day-bg"
               />
               <div
-                class="rbc-day-bg"
+                class="rbc-day-bg rbc-today"
               />
               <div
                 class="rbc-day-bg"
@@ -699,7 +699,7 @@ exports[`renders Calender correctly 1`] = `
                   </a>
                 </div>
                 <div
-                  class="rbc-date-cell"
+                  class="rbc-date-cell rbc-now rbc-current"
                   role="cell"
                 >
                   <a

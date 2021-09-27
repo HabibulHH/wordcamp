@@ -31,6 +31,13 @@ This notificaiton system powered by
 npm run deploy
 ```
 
+## run test cases
+
+```sh
+npm run test
+npm test -- --coverage
+```
+
 ## Starting the server in prod mode
 
 ```sh
